@@ -1,5 +1,5 @@
 # access_ngx_check
-openrestry Access control
+openresty Access control
 
 ## Introduce
 In order to keep the service running normally, we use lua scripts to control user requests in a hierarchical way,  
@@ -12,7 +12,7 @@ You can customize any of the above parameters.
 
 
 ## Preparatory
-Make sure you have openrestry installed and we will replace nginx
+Make sure you have openresty installed and we will replace nginx
 
 
 ## Usage
