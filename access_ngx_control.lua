@@ -11,7 +11,7 @@ local random_rate3 = 100
 local err_data = {};
 err_data['data'] = {};
 err_data['err_code'] = 1101;
-err_data['err_msg'] = '现在提交作业的人太多啦！请稍后再来';
+err_data['err_msg'] = '系统繁忙！请稍后再试';
 local err_data_json = json.encode(err_data);
 --local random_rate = math.random(1,100)
 --math.randomseed(os.time())
