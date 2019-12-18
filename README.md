@@ -11,7 +11,7 @@ And so on.
 You can customize any of the above parameters.  
 
 
-## Preparatory
+## Precondition
 Make sure you have openresty installed and we will replace nginx
 
 
