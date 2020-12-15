@@ -1,12 +1,14 @@
 # access_ngx_check
-openresty Access control
+openresty Access control policy. It includes counter、leaky bucket algorithm and token bucket algorithm .
 
 ## Introduce
 In order to keep the service running normally, we use lua scripts to control user requests in a hierarchical way,  
 For example:  
+
+to Counter:
 If the number of requests in 10s reaches 1000, 20% of random requests will be rejected,  
 If the number of requests in 10s reaches 2000, 40% of random requests will be rejected.  
-  
+
 And so on.  
 You can customize any of the above parameters.  
 
@@ -25,14 +27,14 @@ location / {
         default_type application/json;
         lua_code_cache on;
        
-        # 计数器算法
+        # Counter
         rewrite_by_lua_file /usr/local/openresty/nginx/conf/lua/access_ngx_control.lua;
         
-        # 漏桶算法
+        # leaky bucket
         # rewrite_by_lua_file /usr/local/openresty/nginx/conf/lua/LeakyBucket.lua;
         
-        # 令牌桶算法
-        #rewrite_by_lua_file /usr/local/openresty/nginx/conf/lua/tokenBucket.lua;
+        # token bucket
+        # rewrite_by_lua_file /usr/local/openresty/nginx/conf/lua/tokenBucket.lua;
         
         proxy_pass http://xxxx;
     }
