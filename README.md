@@ -25,7 +25,14 @@ location / {
         default_type application/json;
         lua_code_cache on;
        
+        # 计数器算法
         rewrite_by_lua_file /usr/local/openresty/nginx/conf/lua/access_ngx_control.lua;
+        
+        # 漏桶算法
+        # rewrite_by_lua_file /usr/local/openresty/nginx/conf/lua/LeakyBucket.lua;
+        
+        # 令牌桶算法
+        #rewrite_by_lua_file /usr/local/openresty/nginx/conf/lua/tokenBucket.lua;
         
         proxy_pass http://xxxx;
     }
