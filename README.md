@@ -28,7 +28,7 @@ location / {
         lua_code_cache on;
        
         # Counter
-        rewrite_by_lua_file /usr/local/openresty/nginx/conf/lua/access_ngx_control.lua;
+        rewrite_by_lua_file /usr/local/openresty/nginx/conf/lua/Counter.lua;
         
         # leaky bucket
         # rewrite_by_lua_file /usr/local/openresty/nginx/conf/lua/LeakyBucket.lua;
